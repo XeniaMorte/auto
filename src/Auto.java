@@ -1,18 +1,21 @@
 public class Auto {
-   String brand;
-   String model;
-float engineVolume;
-     String color;
- int year;
- String country;
- public Auto(  String brand,String model,float engineVolume,String color,int year,String country){
-     this.brand=brand;
-     this.color=color;
-     this.engineVolume=engineVolume;
-     this.year=year;
-     this.model=model;
-     this.country=country;
-     }
+    String brand;
+    String model;
+    float engineVolume;
+    String color;
+    int year;
+    String country;
+
+    public Auto(String brand, String model, float engineVolume, String color, int year, String country) {
+
+        this.color = color ==null? " белый":color;
+        this.engineVolume = engineVolume <= 0 ? 1.5f : engineVolume;
+        this.year = year <=0 ? 2000: year;
+        this.brand = brand == null ? "default" : brand;
+        this.model = model == null ? "default" : model;
+        this.country = country == null ? "default" : country;
+
+    }
 
     public String getModel() {
         return model;
@@ -38,8 +41,8 @@ float engineVolume;
         return country;
     }
 
-    public   void info(){
-        System.out.println( brand+" "+model+" "+engineVolume+" "+color+ " "+year+" "+ country );
+    public void info() {
+        System.out.println(brand + " " + model + " " + engineVolume + " " + color + " " + year + " " + country);
     }
 }
 
